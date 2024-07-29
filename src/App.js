@@ -2,7 +2,8 @@ import express from 'express'
 import cors from 'cors'
 import { config } from 'dotenv'
 import { CatagoryRouter } from './routes/Catagory.routes.js';
-import { newArrivalRouter } from './routes/NewArrival.routes.js';
+import { productRouter } from './routes/Product.routes.js';
+
 config();
 
 const app=express()
@@ -17,6 +18,6 @@ app.use (express.json({
 
 app.use('/api/catagory',CatagoryRouter)
 
-app.use('/api/newArrival',newArrivalRouter);
+app.use('/api/product',productRouter)
 
 export {app}   
